@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,77 +7,104 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <h1 class="logo">Oliver</h1>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="logo">Oliver</div>
+    <ul class="nav__links">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
     <div class="hamburger">
       <span></span><span></span><span></span>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="glass-card">
-      <h2>Hola, soy Oliver</h2>
-      <p>Programador Fullstack especializado en proyectos con integración de IA.</p>
-      <a href="#projects" class="btn">Ver proyectos</a>
-    </div>
+    <p class="hero__tag">Fullstack Developer + IA</p>
+    <h1 class="hero__title">Hola, soy Oliver</h1>
+    <p class="hero__subtitle">Programador especializado en proyectos con integración de Inteligencia Artificial y enfoque en UX/UI.</p>
+    <button class="btn">Ver proyectos</button>
   </section>
 
+  <!-- PROYECTOS -->
   <section id="projects" class="section">
-    <h2>Proyectos</h2>
-    <div class="projects-grid">
-      <div class="project-card glass-card" data-project="1">
-        <img src="https://via.placeholder.com/400x200" alt="Proyecto 1">
-        <h3>Chatbot Inteligente</h3>
-        <p>Un asistente virtual con IA para atención al cliente.</p>
-        <p><strong>Lenguajes:</strong> JavaScript, Python, Node.js</p>
-        <button class="btn details-btn">Detalles</button>
+    <h2 class="section__title">Proyectos</h2>
+    <div class="projects__grid">
+      <div class="project-card" data-project="1">
+        <div class="project-card__image-wrapper">
+          <img src="https://via.placeholder.com/400x200" class="project-card__image" alt="Proyecto 1">
+        </div>
+        <h3 class="project-card__title">Chatbot Inteligente</h3>
+        <p class="project-card__description">Asistente virtual con IA para atención al cliente.</p>
+        <ul class="project-card__tags">
+          <li>JavaScript</li><li>Python</li><li>Node.js</li>
+        </ul>
+        <button class="btn btn--small details-btn">Detalles</button>
       </div>
-      <div class="project-card glass-card" data-project="2">
-        <img src="https://via.placeholder.com/400x200" alt="Proyecto 2">
-        <h3>Dashboard Predictivo</h3>
-        <p>Plataforma que analiza datos y predice tendencias.</p>
-        <p><strong>Lenguajes:</strong> React, Python, TensorFlow</p>
-        <button class="btn details-btn">Detalles</button>
+      <div class="project-card" data-project="2">
+        <div class="project-card__image-wrapper">
+          <img src="https://via.placeholder.com/400x200" class="project-card__image" alt="Proyecto 2">
+        </div>
+        <h3 class="project-card__title">Dashboard Predictivo</h3>
+        <p class="project-card__description">Plataforma que analiza datos y predice tendencias.</p>
+        <ul class="project-card__tags">
+          <li>React</li><li>Python</li><li>TensorFlow</li>
+        </ul>
+        <button class="btn btn--small details-btn">Detalles</button>
       </div>
-      <div class="project-card glass-card" data-project="3">
-        <img src="https://via.placeholder.com/400x200" alt="Proyecto 3">
-        <h3>Automatización de Procesos</h3>
-        <p>Sistema que optimiza tareas repetitivas en empresas.</p>
-        <p><strong>Lenguajes:</strong> Django, JavaScript, PostgreSQL</p>
-        <button class="btn details-btn">Detalles</button>
+      <div class="project-card" data-project="3">
+        <div class="project-card__image-wrapper">
+          <img src="https://via.placeholder.com/400x200" class="project-card__image" alt="Proyecto 3">
+        </div>
+        <h3 class="project-card__title">Automatización de Procesos</h3>
+        <p class="project-card__description">Sistema que optimiza tareas repetitivas en empresas.</p>
+        <ul class="project-card__tags">
+          <li>Django</li><li>JavaScript</li><li>PostgreSQL</li>
+        </ul>
+        <button class="btn btn--small details-btn">Detalles</button>
       </div>
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contact" class="section">
-    <h2>Contacto</h2>
-    <form class="glass-card contact-form">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea placeholder="Tu mensaje" required></textarea>
+    <h2 class="section__title">Contacto</h2>
+    <form class="contact__form">
+      <div class="form__group">
+        <input type="text" placeholder="Tu nombre" required>
+      </div>
+      <div class="form__group">
+        <input type="email" placeholder="Tu correo" required>
+      </div>
+      <div class="form__group">
+        <textarea placeholder="Tu mensaje" required></textarea>
+      </div>
       <button type="submit" class="btn">Enviar</button>
     </form>
   </section>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer class="footer">
     <p>© 2026 Oliver - Todos los derechos reservados</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content glass-card">
-      <span class="close">&times;</span>
+  <!-- MODAL -->
+  <div id="projectModal" class="modal modal--hidden">
+    <div class="modal__content">
+      <button class="modal__close">&times;</button>
       <img id="modal-img" src="" alt="Imagen del proyecto">
       <h3 id="modal-title"></h3>
       <p id="modal-description"></p>
       <p><strong>Tecnologías:</strong> <span id="modal-tech"></span></p>
       <p><strong>Repositorio:</strong> <a id="modal-repo" href="#" target="_blank">GitHub (placeholder)</a></p>
       <p><strong>Demo:</strong> <a id="modal-demo" href="#" target="_blank">Demo en vivo (placeholder)</a></p>
-      
+      <img id="modal-gif" src="" alt="GIF del proyecto">
+      <p><strong>Rol:</strong> Desarrollado íntegramente por mí</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
