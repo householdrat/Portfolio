@@ -155,3 +155,16 @@ body {
   from { opacity: 0; transform: scale(0.8); }
   to { opacity: 1; transform: scale(1); }
 }
+
+.modal.show .modal-content {
+  animation: zoomFadeIn 0.3s ease forwards;
+}
+
+.modal:not(.show) .modal-content {
+  animation: zoomFadeOut 0.3s ease forwards;
+}
+
+@keyframes zoomFadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.8); }
+}
