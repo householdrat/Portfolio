@@ -52,16 +52,17 @@ body {
   border-radius: 10px;
 }
 
+.nav-links.active ul {
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
   .hamburger {
     display: flex;
-  }
-  .nav-links ul {
-    flex-direction: column;
-    gap: 1rem;
   }
 }
 
