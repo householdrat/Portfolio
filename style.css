@@ -37,12 +37,31 @@ body {
   border-radius: 5px;
 }
 
+.nav-links ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: var(--glass-bg);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
   .hamburger {
     display: flex;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
@@ -109,7 +128,7 @@ body {
   width: 90%;
   padding: 2rem;
   position: relative;
-  animation: fadeIn 0.5s ease;
+  animation: zoomFadeIn 0.5s ease;
 }
 
 .modal-content img {
@@ -129,4 +148,9 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomFadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
