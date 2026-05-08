@@ -1,12 +1,12 @@
 // Menú hamburguesa
 const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav__links');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Datos de proyectos para el modal
+// Datos de proyectos
 const projects = {
   1: {
     title: "Chatbot Inteligente",
@@ -39,7 +39,7 @@ const projects = {
 
 // Modal
 const modal = document.getElementById('projectModal');
-const closeBtn = document.querySelector('.close');
+const closeBtn = document.querySelector('.modal__close');
 const detailButtons = document.querySelectorAll('.details-btn');
 
 detailButtons.forEach(btn => {
@@ -55,27 +55,34 @@ detailButtons.forEach(btn => {
     document.getElementById('modal-repo').href = project.repo;
     document.getElementById('modal-demo').href = project.demo;
 
-    modal.style.display = 'flex';
-    modal.classList.add('show'); // activa animación de entrada
+    modal.classList.remove('modal--hidden');
   });
 });
 
-// Cerrar modal con botón X
+// Cerrar modal
 closeBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-  setTimeout(() => { modal.style.display = 'none'; }, 300); // animación salida
+  modal.classList.add('modal--hidden');
 });
-
-// Cerrar modal al hacer clic fuera
 window.addEventListener('click', e => {
   if (e.target === modal) {
-    modal.classList.remove('show');
-    setTimeout(() => { modal.style.display = 'none'; }, 300);
+    modal.classList.add('modal--hidden');
   }
 });
 
-// Simulación de envío de formulario
-document.querySelector('.contact-form').addEventListener('submit', e => {
+// Formulario
+document.querySelector('.contact__form').addEventListener('submit', e => {
   e.preventDefault();
   alert('Gracias por tu mensaje, te contactaré pronto.');
 });
+
+// Scroll reveal
+const revealElements = document.querySelectorAll('[data-reveal]');
+const revealOnScroll = () => {
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('revealed');
+    }
+  });
+};
+window.addEventListener('scroll', revealOnScroll);
